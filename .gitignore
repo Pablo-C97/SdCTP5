@@ -1,0 +1,18 @@
+# Archivos de compilación del módulo de Linux
+*.o
+*.ko
+*.mod
+*.mod.c
+*.symvers
+*.order
+.tmp_versions/
+.*.cmd
+
+# Servidor y caché
+__pycache__/
+*.pyc
+
+# Archivos del sistema u ocultos de editores
+.DS_Store
+.vscode/
+.codium/
