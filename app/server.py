@@ -82,11 +82,7 @@ def background_sampler():
 def index():
     return send_from_directory('.', 'index.html')
 
-# INSTRUCCIONES DE INTEGRACIÓN EN RASPBERRY PI:
-# 1. Eliminar/Comentar el hilo secundario 't' y la función 'background_sampler'.
-# 2. Modificar 'get_data()' para abrir, escribir el ID de canal y leer de /dev/cdd_sensor.
-# 3. Retornar la muestra real en formato JSON: {"status": "success", "samples": [sample]}.
-# El método GET ahora devuelve la lista única con toda la cronología
+
 @app.route('/api/data', methods=['GET'])
 def get_data():
     with buffer_lock:
