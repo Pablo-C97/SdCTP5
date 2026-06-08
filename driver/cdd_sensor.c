@@ -52,8 +52,7 @@ static ssize_t sensor_read(struct file *file, char __user *user_buffer, size_t s
     char buffer[16];
     int len;
 
-    // Eliminamos o comentamos el control de offset viejo para que no moleste:
-    // if (*offset > 0) { return 0; }
+ 
 
     pr_info("Petición de lectura recibida desde el driver\n");
 
@@ -73,8 +72,7 @@ static ssize_t sensor_read(struct file *file, char __user *user_buffer, size_t s
         return -EFAULT;
     }
 
-    // MAGIA: En lugar de hacer *offset += len;, forzamos que el offset
-    // del kernel vuelva a ser 0 para la próxima lectura de Python.
+    //  forzamos que el offset del kernel vuelva a ser 0 para la próxima lectura de Python.
     *offset = 0; 
 
     return len;
